@@ -38,7 +38,7 @@ module.exports = {
           'babel-loader',
         ],
       },
-      // CSS loader to CSS files -> ADDED IN THIS STEP
+      // CSS loader to CSS files
       // Files will get handled by css loader and then passed to the extract text plugin
       // which will write it to the file we defined above
       {
@@ -46,10 +46,18 @@ module.exports = {
         loader: ExtractTextPlugin.extract({
           use: 'css-loader',
         }),
-      }
+      },
+      // File loader for image assets
+      // We'll add only image extensions, but you can things like svgs, fonts and videos
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          'file-loader',
+        ],
+      },
     ],
   },
-  // Enable importing JS files without specifying their's extenstion -> ADDED IN THIS STEP
+  // Enable importing JS files without specifying their's extenstion
   //
   // So we can write:
   // import MyComponent from './my-component';

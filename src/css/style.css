@@ -9,3 +9,9 @@ body {
 .blue {
   color: #3f8ad4;
 }
+
+.logo-react {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}

@@ -6,11 +6,14 @@ import has from 'lodash/has'
 
 import './../css/style.css'
 
+import reactLogo from '../assets/react.svg';
+
 export default class Hello extends Component {
   render() {
     return (
       <div>
         Hello from <span className="blue">React</span>
+        <img src={reactLogo} alt="react-logo" className="logo-react" />
       </div>
     );
   }
