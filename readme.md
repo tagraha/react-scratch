@@ -1,0 +1,1 @@
+minimal setup for react, webpack, babel
