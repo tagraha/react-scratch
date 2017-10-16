@@ -1300,6 +1300,12 @@ var _has = __webpack_require__(43);
 
 var _has2 = _interopRequireDefault(_has);
 
+__webpack_require__(90);
+
+var _react3 = __webpack_require__(91);
+
+var _react4 = _interopRequireDefault(_react3);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1325,7 +1331,13 @@ var Hello = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        'Hello from react'
+        'Hello from ',
+        _react2.default.createElement(
+          'span',
+          { className: 'blue' },
+          'React'
+        ),
+        _react2.default.createElement('img', { src: _react4.default, alt: 'react-logo', className: 'logo-react' })
       );
     }
   }]);
@@ -22979,6 +22991,18 @@ function toKey(value) {
 
 module.exports = toKey;
 
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "4009eef3b3e291f296e71962c70895c5.svg";
 
 /***/ })
 /******/ ]);
