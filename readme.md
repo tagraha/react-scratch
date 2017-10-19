@@ -141,3 +141,14 @@ module.exports = {
   // },
 };
 ```
+
+**babel**
+```bash
+npm install --save-dev babel-core babel-loader babel-preset-env babel-preset-react
+```
+***.babelrc***
+```json
+{
+  "presets": ["env", "react"]
+}
+```
