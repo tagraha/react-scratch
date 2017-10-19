@@ -37,3 +37,17 @@ module.exports = {
   },
 };
 ```
+
+***create build script***
+```javascript
+{
+  "scripts": {
+    "build": "webpack"
+  }
+}
+```
+
+***dev server***
+```javascript
+npm install --save-dev webpack-dev-server
+```
