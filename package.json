@@ -5,8 +5,8 @@
   "main": "dist/server.js",
   "scripts": {
     "build": "webpack",
-    "build:server": "webpack --config webpack.config.server",
-    "build:client": "webpack --config webpack.config",
+    "build:server": "webpack -p --config webpack.config.server",
+    "build:client": "webpack -p --config webpack.config",
     "build:all": "npm run clean && npm run build:server && npm run build:client",
     "clean": "rm -rf dist",
     "dev:client": "webpack-dev-server && node dist/app.bundle.js",
