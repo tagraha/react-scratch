@@ -1,5 +1,5 @@
 {
-  "name": "react-scratch",
+  "name": "react-scratch-universal",
   "version": "1.0.0",
   "description": "minimal setup for react, webpack, babel",
   "main": "dist/server.js",
@@ -8,9 +8,10 @@
     "build:server": "webpack --config webpack.config.server",
     "build:client": "webpack --config webpack.config",
     "build:all": "npm run clean && npm run build:server && npm run build:client",
-    "dev:client": "webpack-dev-server && node dist/app.bundle.js",
     "clean": "rm -rf dist",
+    "dev:client": "webpack-dev-server && node dist/app.bundle.js",
     "mulai": "node dist/server.js",
+    "premulai": "npm run build:all",
     "dev": "webpack-dev-server"
   },
   "author": "tirta nugraha",
