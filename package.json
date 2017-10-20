@@ -2,9 +2,15 @@
   "name": "react-scratch",
   "version": "1.0.0",
   "description": "minimal setup for react, webpack, babel",
-  "main": "index.js",
+  "main": "dist/server.js",
   "scripts": {
     "build": "webpack",
+    "build:server": "webpack --config webpack.config.server",
+    "build:client": "webpack --config webpack.config",
+    "build:all": "npm run clean && npm run build:server && npm run build:client",
+    "dev:client": "webpack-dev-server && node dist/app.bundle.js",
+    "clean": "rm -rf dist",
+    "mulai": "node dist/server.js",
     "dev": "webpack-dev-server"
   },
   "author": "tirta nugraha",
@@ -22,9 +28,16 @@
     "webpack-dev-server": "^2.9.2"
   },
   "dependencies": {
+    "express": "^4.16.2",
     "lodash": "^4.17.4",
+    "node-fetch": "^1.7.3",
     "prop-types": "^15.6.0",
     "react": "16.0.0",
-    "react-dom": "16.0.0"
+    "react-dom": "16.0.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "source-map-support": "^0.5.0",
+    "webpack-node-externals": "^1.6.0"
   }
 }

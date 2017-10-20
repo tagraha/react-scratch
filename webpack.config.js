@@ -8,18 +8,18 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // Constant with our paths
 const paths = {
   DIST: path.resolve(__dirname, 'dist'),
-  SRC: path.resolve(__dirname, 'src'), // source folder path -> ADDED IN THIS STEP
-  JS: path.resolve(__dirname, 'src/js'),
+  SRC: path.resolve(__dirname, 'client'), // source folder path 
+  JS: path.resolve(__dirname, 'client/js'),
 };
 
 // Webpack configuration
 module.exports = {
-  entry: path.join(paths.JS, 'app.js'),
+  entry: path.join(paths.JS, 'index.js'),
   output: {
     path: paths.DIST,
     filename: 'app.bundle.js',
   },
-  // Tell webpack to use html plugin -> ADDED IN THIS STEP
+  // Tell webpack to use html plugin
   // index.html is used as a template in which it'll inject bundled app.
   plugins: [
     new HtmlWebpackPlugin({
@@ -27,7 +27,7 @@ module.exports = {
     }),
     new ExtractTextPlugin('style.bundle.css'),
   ],
-  // Loaders configuration -> ADDED IN THIS STEP
+  // Loaders configuration
   // We are telling webpack to use "babel-loader" for .js and .jsx files
   module: {
     rules: [
