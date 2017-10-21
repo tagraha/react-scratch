@@ -17,10 +17,6 @@ const app = express();
 //set port
 const port = process.env.PORT || 8080;
 
-// app.get('*', (req, res) => {
-//   res.send({hello: 'world'})
-// })
-
 const routes = [
   '/',
   '/home',
@@ -32,20 +28,20 @@ app.use('/static', express.static('./dist'));
 app.get('*', (req, res) => {
   const match = routes.reduce((acc, route) => matchPath(req.url, route, { exact: true }) || acc, null);
   if (!match) {
-      res.status(404).send(render(<Error />));
-      return;
+    res.status(404).send(render(<Error />));
+    return;
   }
   fetch('https://api.github.com/gists')
-      .then(r => r.json())
-      .then(gists => 
-        res.status(200).send(render(
-          (
-            <Router context={{}} location={req.url}>
-              <App gists={gists} />
-            </Router>
-          ), gists
-        ))
-      )
+    .then(r => r.json())
+    .then(gists => 
+      res.status(200).send(render(
+        (
+          <Router context={{}} location={req.url}>
+            <App gists={gists} />
+          </Router>
+        ), gists
+      ))
+    )
 });
 
 // start app
