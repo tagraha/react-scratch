@@ -10,8 +10,8 @@
     "build:all": "npm run clean && npm run build:server && npm run build:client",
     "clean": "rm -rf dist",
     "dev:client": "webpack-dev-server && node dist/app.bundle.js",
-    "mulai": "node dist/server.js",
-    "premulai": "npm run build:all",
+    "start": "node dist/server-build.js",
+    "prestart": "npm run build:all",
     "dev": "webpack-dev-server"
   },
   "author": "tirta nugraha",
