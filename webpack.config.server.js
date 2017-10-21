@@ -11,7 +11,7 @@ module.exports = {
   entry: './index.js',
   output: {
     path: distPath,
-    filename: 'server.js'
+    filename: 'server-build.js'
   },
   plugins: [
     new ExtractTextPlugin('style.bundle.css'),
