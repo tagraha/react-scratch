@@ -8,7 +8,11 @@ import serialize from "serialize-javascript";
 import routes from "../shared/routes";
 import configureStore from "../shared/configureStore";
 import App from "../shared/App";
-import "source-map-support/register";
+import sourceMapSupport from "source-map-support";
+
+if(process.env.NODE_ENV === 'development') {
+  sourceMapSupport.install();
+}
 
 const app = express();
 
@@ -134,10 +138,10 @@ app.get("*", (req, res, next) => {
             <title>React scratch</title>
             <link rel="stylesheet" href="/css/main.css">
             <script src="/bundle.js" defer></script>
-            <script>window.__initialData__ = ${serialize(initialData)}</script>
           </head>
           <body>
             <div id="root">${markup}</div>
+            <script>window.__initialData__ = ${serialize(initialData)}</script>
           </body>
         </html>
       `);
