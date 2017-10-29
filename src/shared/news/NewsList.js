@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./NewsList.css";
 
 export default function NewsList({ news }) {
