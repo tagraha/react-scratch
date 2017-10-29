@@ -15,6 +15,7 @@ const app = express();
 app.use(cors());
 app.use(express.static("public"));
 
+// hardcode
 app.get("/api/news", (req, res) => {
   res.json([
     {
@@ -130,7 +131,7 @@ app.get("*", (req, res, next) => {
         <!DOCTYPE html>
         <html>
           <head>
-            <title>W Combinator</title>
+            <title>React scratch</title>
             <link rel="stylesheet" href="/css/main.css">
             <script src="/bundle.js" defer></script>
             <script>window.__initialData__ = ${serialize(initialData)}</script>
