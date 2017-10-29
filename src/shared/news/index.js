@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchNews } from "../ducks";
+import { fetchNews } from "./../../../redux/news";
 import NewsList from "./NewsList";
 
 class News extends Component {
