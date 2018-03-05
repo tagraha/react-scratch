@@ -6,9 +6,11 @@ import "./App.css";
 class App extends Component {
   render() {
     return (
-      <Switch>
-        {routes.map((route, i) => <Route key={i} {...route} />)}
-      </Switch>
+      <div className="container">
+        <Switch>
+          {routes.map((route, i) => <Route key={i} {...route} />)}
+        </Switch>
+      </div>
     );
   }
 }

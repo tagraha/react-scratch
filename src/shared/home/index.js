@@ -7,18 +7,20 @@ import "./index.css";
 class Home extends Component {
   render() {
     return (
-      <div className="home">
+      <div className="row">
         <header>
           <img src={logo} />
         </header>
-        <aside>
+        <div className="column">
           <p className="selected">About</p>
           <p>
-            <Link to="/news">Wizard News</Link>
+            <Link to="/repo">tagraha repo</Link>
           </p>
-        </aside>
-        <article>
-          <h1>W Combinator created a new model for funding early stage wizardry.</h1>
+        </div>
+        <div className="column">
+          <blockquote>
+            <p><em>Sometimes when I close my eyes, I can't see :/</em></p>
+          </blockquote>
           <p>
             Twice a year we invest a small amount of mana in a large number of wizards (recently
             105).
@@ -33,10 +35,7 @@ class Home extends Component {
             But WC doesn’t end on Demo Day. We and the WC alumni network continue to help mages for
             the life of their magic, and beyond.
           </p>
-        </article>
-        <figure>
-          <img src={wizards} />
-        </figure>
+        </div>
       </div>
     );
   }

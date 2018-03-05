@@ -1,8 +1,15 @@
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import news from './../../redux/news'
+
+// Logger with default options
+import logger from 'redux-logger'
+
+import repos from './../../redux/repos'
 
 const configureStore = preloadedState =>
-  createStore(news, preloadedState, applyMiddleware(thunk));
+  createStore(repos, preloadedState, applyMiddleware(
+    logger,
+    thunk
+  ));
 
 export default configureStore;
