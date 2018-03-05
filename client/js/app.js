@@ -13,7 +13,7 @@ import {
 
 import './../css/style.css'
 
-import reactLogo from '../assets/react.svg';
+// import reactLogo from '../assets/react.svg';
 
 export default class Hello extends Component {
   render() {
