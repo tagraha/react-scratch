@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import logo from "./logo.png";
-import wizards from "./wizards.jpg";
 import "./index.css";
 
 class Home extends Component {
   render() {
     return (
       <div className="row">
-        <header>
-          <img src={logo} />
-        </header>
         <div className="column">
           <p className="selected">About</p>
           <p>
