@@ -4,6 +4,9 @@
   "description": "minimal setup for react, webpack, babel",
   "main": "server.js",
   "scripts": {
+    "release:major": "changelog -M -u https://github.com/tagraha/react-scratch && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin --tags",
+    "release:minor": "changelog -m -u https://github.com/tagraha/react-scratch && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin --tags",
+    "release:patch": "changelog -p -u https://github.com/tagraha/react-scratch && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin --tags",
     "start-dev": "cross-env NODE_ENV=development webpack -w & cross-env NODE_ENV=development nodemon server.js",
     "build": "webpack -p",
     "clean": "rm -rf public && rm -rf server.js",
@@ -38,6 +41,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-app": "^3.0.1",
     "babel-preset-stage-0": "^6.24.1",
+    "changelog-generator": "0.0.4",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
