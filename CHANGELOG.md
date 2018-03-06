@@ -1,3 +1,9 @@
+### 1.2.0 (2018-03-06)
+
+##### Build System / Dependencies
+
+* **perks:**  upgrading to webpack 4.1.0 ([b04368ba](https://github.com/tagraha/react-scratch/commit/b04368bafccb171bbb7310032eb482d41e04df5f))
+
 ### 1.1.0 (2018-03-06)
 
 ##### Bug Fixes
