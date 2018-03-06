@@ -1,70 +1,90 @@
-// We are using node's native package 'path'
-// https://nodejs.org/api/path.html
-const path = require('path');
+const webpack = require("webpack");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const autoprefixer = require("autoprefixer");
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-// Constant with our paths
-const paths = {
-  DIST: path.resolve(__dirname, 'dist'),
-  SRC: path.resolve(__dirname, 'client'), // source folder path 
-  JS: path.resolve(__dirname, 'client/js'),
-};
-
-// Webpack configuration
-module.exports = {
-  entry: path.join(paths.JS, 'index.js'),
+const browserConfig = {
+  entry: "./src/browser/index.js",
   output: {
-    path: paths.DIST,
-    filename: 'app.bundle.js',
+    path: __dirname,
+    filename: "./public/bundle.js"
   },
-  // Tell webpack to use html plugin
-  // index.html is used as a template in which it'll inject bundled app.
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(paths.SRC, 'index.html'),
-    }),
-    new ExtractTextPlugin('style.bundle.css'),
-  ],
-  // Loaders configuration
-  // We are telling webpack to use "babel-loader" for .js and .jsx files
+  devtool: "cheap-module-source-map",
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: [
-          'babel-loader',
-        ],
+        test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        loader: "file-loader",
+        options: {
+          name: "public/media/[name].[ext]",
+          publicPath: url => url.replace(/public/, "")
+        }
       },
-      // CSS loader to CSS files
-      // Files will get handled by css loader and then passed to the extract text plugin
-      // which will write it to the file we defined above
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          use: 'css-loader',
-        }),
+        use: ExtractTextPlugin.extract({
+          use: [
+            {
+              loader: "css-loader",
+              options: { importLoaders: 1 }
+            },
+            {
+              loader: "postcss-loader",
+              options: { plugins: [autoprefixer()] }
+            }
+          ]
+        })
       },
-      // File loader for image assets
-      // We'll add only image extensions, but you can things like svgs, fonts and videos
       {
-        test: /\.(png|jpg|gif|svg)$/,
-        use: [
-          'file-loader',
-        ],
-      },
-    ],
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules)/,
+        loader: "babel-loader",
+        query: { presets: ["react"] }
+      }
+    ]
   },
-  // Enable importing JS files without specifying their's extenstion
-  //
-  // So we can write:
-  // import MyComponent from './my-component';
-  //
-  // Instead of:
-  // import MyComponent from './my-component.jsx';
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
+  plugins: [
+    new ExtractTextPlugin({
+      filename: "public/css/[name].css"
+    })
+  ]
 };
+
+const serverConfig = {
+  entry: "./src/server/index.js",
+  target: "node",
+  output: {
+    path: __dirname,
+    filename: "server.js",
+    libraryTarget: "commonjs2"
+  },
+  devtool: "cheap-module-source-map",
+  module: {
+    rules: [
+      {
+        test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        loader: "file-loader",
+        options: {
+          name: "public/media/[name].[ext]",
+          publicPath: url => url.replace(/public/, ""),
+          emit: false
+        }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "css-loader/locals"
+          }
+        ]
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules)/,
+        loader: "babel-loader",
+        query: { presets: ["react"] }
+      }
+    ]
+  }
+};
+
+module.exports = [browserConfig, serverConfig];
