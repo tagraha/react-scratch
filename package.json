@@ -19,7 +19,7 @@
   "dependencies": {
     "cors": "^2.8.4",
     "cross-env": "^5.1.1",
-    "express": "^4.15.3",
+    "express": "4.16.2",
     "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.6.0",
     "react": "16.2.0",
