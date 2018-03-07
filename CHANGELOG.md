@@ -1,3 +1,13 @@
+### 1.3.0 (2018-03-07)
+
+##### Other Changes
+
+* **package:**
+  *  react-router-dom 4.2.2 ([c23a2f9c](https://github.com/tagraha/react-scratch/commit/c23a2f9cff9e852e8c10add13916423b1196a461))
+  *  express@4.16.2 ([a52b047e](https://github.com/tagraha/react-scratch/commit/a52b047e39e18d1dcac91d1580ad5e20593eb119))
+  *  react-redux 5.0.7 ([02684ad8](https://github.com/tagraha/react-scratch/commit/02684ad88a34a3a8783bcba5bc56fd64824d1cca))
+  *  react & react-dom v16.2.0 ([01b43797](https://github.com/tagraha/react-scratch/commit/01b437978afb313c18d046dac6d9b05da5ef0b88))
+
 ### 1.2.0 (2018-03-06)
 
 ##### Build System / Dependencies
