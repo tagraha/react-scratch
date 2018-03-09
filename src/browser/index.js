@@ -5,7 +5,13 @@ import { BrowserRouter } from "react-router-dom";
 import configureStore from "../shared/configureStore";
 import App from "../shared/App";
 
-const store = configureStore(window.__initialData__);
+// Grab the state from a global variable injected into the server-generated HTML
+const preloadedState = window.__initialData__
+
+// Allow the passed state to be garbage-collected
+delete window.__initialData__
+
+const store = configureStore(preloadedState);
 
 hydrate(
   <Provider store={store}>
