@@ -7,6 +7,28 @@
 
 ##### Other Changes
 
+* **name:**  update project name ([363779fb](https://github.com/tagraha/react-scratch/commit/363779fb18e64d9c70d2992e503163a04c38f9b3))
+* **badge:**  add contributor badge ([65fcfb92](https://github.com/tagraha/react-scratch/commit/65fcfb928b5b6050f3710dfc70b0b8952363569a))
+* **contrib:**  add .all-contributorsrc file ([a7ab5112](https://github.com/tagraha/react-scratch/commit/a7ab511269f2914859d5a9d0113756d0aeb57a32))
+* **package:**
+  *  update source-map-support ([16617792](https://github.com/tagraha/react-scratch/commit/16617792c0eb478677013e43f9c808a3d075ad28))
+  *  adding recompose ([9fa069ab](https://github.com/tagraha/react-scratch/commit/9fa069ab3a600784ad6ab440acd3db5cf9329132))
+  *  adding babel-plugin-lodash ([0ebe2103](https://github.com/tagraha/react-scratch/commit/0ebe2103614bdcf7aa88a05581ba96c7625e418a))
+  *  adding lodash ([2c118387](https://github.com/tagraha/react-scratch/commit/2c1183870073d3e69185bd9dbbf4663efed3d4ae))
+
+##### Performance Improvements
+
+* **recompose:**  adding recompose toolbelt ([c22916c9](https://github.com/tagraha/react-scratch/commit/c22916c99eae8611c39ffeb8b8d63aabe0fec6f4))
+
+#### 1.4.1 (2018-03-09)
+
+##### Build System / Dependencies
+
+* **bundle:**  optimizing bundle size ([a2c5105e](https://github.com/tagraha/react-scratch/commit/a2c5105e222878d14220be33b8fa19d246bba20d))
+* **lodash:**  adding babel plugin for lodash ([8687a7cd](https://github.com/tagraha/react-scratch/commit/8687a7cd782c7b75168380dca6c5ecf9f1b28ef3))
+
+##### Other Changes
+
 * **package:**
   *  adding recompose ([9fa069ab](https://github.com/tagraha/react-scratch/commit/9fa069ab3a600784ad6ab440acd3db5cf9329132))
   *  adding babel-plugin-lodash ([0ebe2103](https://github.com/tagraha/react-scratch/commit/0ebe2103614bdcf7aa88a05581ba96c7625e418a))
