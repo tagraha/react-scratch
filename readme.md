@@ -29,3 +29,14 @@ Todos
 ------
 - [ ] React Helmet :+1: [react-helmet](https://github.com/nfl/react-helmet)
 - [ ] React Loadable :+1: [react-loadable](https://github.com/jamiebuilds/react-loadable)
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars0.githubusercontent.com/u/3034375?v=4" width="100px;"/><br /><sub><b>Tirta Nugraha</b></sub>](http://www.betotally.com/)<br />[💻](https://github.com/tagraha/react-scratch/commits?author=tagraha "Code") [📖](https://github.com/tagraha/react-scratch/commits?author=tagraha "Documentation") |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
