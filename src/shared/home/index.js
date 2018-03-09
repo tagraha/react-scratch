@@ -9,7 +9,7 @@ class Home extends Component {
         <div className="column">
           <p className="selected">About</p>
           <p>
-            <Link to="/repo">tagraha repo</Link>
+            <Link to="/repo">tagraha repo (async demo)</Link>
           </p>
         </div>
         <div className="column">
