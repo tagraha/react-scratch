@@ -1,5 +1,5 @@
 ***Minimal setup for react, webpack, babel***
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 <div align="center">
   <!-- Dependency Status -->
   <a 
