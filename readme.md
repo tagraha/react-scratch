@@ -9,6 +9,8 @@
   </a>
 </div>
 
+
+
 ```bash
 git clone git@github.com:tagraha/react-scratch.git
 ```
@@ -20,3 +22,8 @@ npm run start-dev
 ```
 
 it should be run on localhost:3000
+
+Todos
+------
+- [ ] React Helmet :+1:
+- [ ] React Loadable :+1:
