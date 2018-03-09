@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import pure from 'recompose/pure';
 import "./index.css";
 
 class Home extends Component {
@@ -36,4 +37,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default pure(Home);
