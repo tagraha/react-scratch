@@ -1,3 +1,20 @@
+### 1.4.0 (2018-03-09)
+
+##### Build System / Dependencies
+
+* **hydrate:**  using hydrate from react-dom ([41294a0b](https://github.com/tagraha/react-scratch/commit/41294a0b539bfa25b96f6b3561ed23d56dc0f28c))
+
+##### Other Changes
+
+* **link caption:**  update link caption ([5aa54112](https://github.com/tagraha/react-scratch/commit/5aa54112c8c1618fbbf44c86235a75491aa86ffa))
+* **readme:**
+  *  fix wrong script command ([4d5cc6ae](https://github.com/tagraha/react-scratch/commit/4d5cc6aea196283a764d523326790415ed6bf263))
+  *  update readme ([5f4b5795](https://github.com/tagraha/react-scratch/commit/5f4b5795ee64d106a6975bb7cb1de43fafd76e6e))
+
+##### Performance Improvements
+
+* **hydrate:**  better async data fetching using hydrate ([68d804d4](https://github.com/tagraha/react-scratch/commit/68d804d4c3d371ac6bdf48fe909e2ab1279645e2))
+
 ### 1.3.0 (2018-03-07)
 
 ##### Other Changes
