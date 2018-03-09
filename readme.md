@@ -25,5 +25,5 @@ it should be run on localhost:3000
 
 Todos
 ------
-- [ ] React Helmet :+1:
-- [ ] React Loadable :+1:
+- [ ] React Helmet :+1: [react-helmet](https://github.com/nfl/react-helmet)
+- [ ] React Loadable :+1: [react-loadable](https://github.com/jamiebuilds/react-loadable)
