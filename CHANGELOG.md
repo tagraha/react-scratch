@@ -1,21 +1,3 @@
-### 1.5.0 (2018-03-10)
-
-##### Build System / Dependencies
-
-* **chunkhas:**  apply chunkhas to bundle ([57b3bd10](https://github.com/tagraha/react-scratch/commit/57b3bd105bcbf81627d5a25de768a384f0c74e76))
-
-##### New Features
-
-* **helmet:**
-  *  apply react-helmet on client-side render ([3048d6e4](https://github.com/tagraha/react-scratch/commit/3048d6e4b008292d83c9ed60ae52d6b67ba67a7f))
-  *  apply react helmet on server-side render ([5935d4b0](https://github.com/tagraha/react-scratch/commit/5935d4b0b3be352819055520754b9cadd496b847))
-
-##### Other Changes
-
-* **package:**
-  *  adding react-helmet ([77fabe15](https://github.com/tagraha/react-scratch/commit/77fabe1527c3b095f4dac8bd13f0c0f167346c23))
-  *  adding dotenv ([f27f766f](https://github.com/tagraha/react-scratch/commit/f27f766f5e94595c0ca0e3ed8291f4c61989ff35))
-
 #### 1.4.1 (2018-03-09)
 
 ##### Build System / Dependencies
