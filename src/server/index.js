@@ -9,6 +9,7 @@ import routes from "../shared/routes";
 import configureStore from "../shared/configureStore";
 import App from "../shared/App";
 import sourceMapSupport from "source-map-support";
+import reactHelmet from 'react-helmet';
 
 if(process.env.NODE_ENV === 'development') {
   sourceMapSupport.install();
@@ -41,11 +42,17 @@ app.get("*", (req, res, next) => {
       );
 
       const initialData = store.getState();
+
+      let head = reactHelmet.rewind();
+
       res.send(`
         <!DOCTYPE html>
         <html>
           <head>
-            <title>React scratch</title>
+            <meta charset="utf-8" />
+            ${head.title}
+            ${head.meta}
+            ${head.link}
             <link rel="stylesheet" href="/css/main.css">
             <script src="/bundle.js" defer></script>
           </head>
