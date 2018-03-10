@@ -8,7 +8,7 @@
     "release:minor": "changelog -m -u https://github.com/tagraha/react-scratch && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin --tags",
     "release:patch": "changelog -p -u https://github.com/tagraha/react-scratch && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin --tags",
     "start-dev": "cross-env NODE_ENV=development webpack -w & cross-env NODE_ENV=development nodemon server.js",
-    "build": "webpack -p",
+    "build": "webpack",
     "clean": "rm -rf public && rm -rf server.js",
     "prestart": "npm run clean && npm run build",
     "start": "node server.js",
@@ -21,6 +21,7 @@
   "dependencies": {
     "cors": "^2.8.4",
     "cross-env": "^5.1.1",
+    "dotenv": "5.0.1",
     "express": "4.16.2",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.5",
