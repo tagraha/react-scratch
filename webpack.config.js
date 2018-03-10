@@ -1,3 +1,4 @@
+require('dotenv').config();
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require("autoprefixer");
@@ -6,7 +7,7 @@ const browserConfig = {
   entry: "./src/browser/index.js",
   output: {
     path: __dirname,
-    filename: "./public/bundle.js"
+    filename: "./public/bundle-[chunkhash].js"
   },
   devtool: "cheap-module-source-map",
   module: {
