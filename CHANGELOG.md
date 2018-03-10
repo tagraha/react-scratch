@@ -2,7 +2,7 @@
 
 ##### Build System / Dependencies
 
-* **chunkhas:**  apply chunkhas to bundle ([57b3bd10](https://github.com/tagraha/react-scratch/commit/57b3bd105bcbf81627d5a25de768a384f0c74e76))
+* **chunkhash:**  apply chunkhash to bundle ([57b3bd10](https://github.com/tagraha/react-scratch/commit/57b3bd105bcbf81627d5a25de768a384f0c74e76))
 
 ##### New Features
 
