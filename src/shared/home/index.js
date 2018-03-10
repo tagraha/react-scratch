@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import pure from 'recompose/pure';
+import Helmet from 'react-helmet';
 import "./index.css";
 
 class Home extends Component {
   render() {
     return (
       <div className="row">
+        <Helmet
+          title="Welcome to our Homepage"
+        />
         <div className="column">
           <p className="selected">About</p>
           <p>

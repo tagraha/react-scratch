@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Helmet from 'react-helmet';
 import "./RepoList.css";
 
 export default function RepoList({ repos }) {
   return (
     <div className="repolist">
+      <Helmet
+        title="Async example"
+      />
       <Link to="/">back to home</Link>
       <h1>
         Async page example
