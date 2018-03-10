@@ -61,3 +61,4 @@ typings/
 dist
 public/
 server.js
+server.js.map
