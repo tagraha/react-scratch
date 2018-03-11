@@ -3,6 +3,8 @@ import cors from "cors";
 import React from "react";
 import { renderToString } from "react-dom/server";
 import { Provider } from "react-redux";
+import { AsyncComponentProvider, createAsyncContext } from 'react-async-component';
+import asyncBootstrapper from 'react-async-bootstrapper';
 import { StaticRouter, matchPath } from "react-router-dom";
 import serialize from "serialize-javascript";
 import routes from "../shared/routes";
@@ -33,35 +35,53 @@ app.get("*", (req, res, next) => {
   Promise.all(promises)
     .then(() => {
       const context = {};
-      const markup = renderToString(
-        <Provider store={store}>
-          <StaticRouter location={req.url} context={context}>
-            <App />
-          </StaticRouter>
-        </Provider>
+
+      // Create the async context for our provider, this grants
+      // us the ability to tap into the state to send back to the client.
+      const asyncContext = createAsyncContext();
+
+      const app = (
+        <AsyncComponentProvider asyncContext={asyncContext}>
+          <Provider store={store}>
+            <StaticRouter location={req.url} context={context}>
+              <App />
+            </StaticRouter>
+          </Provider>
+        </AsyncComponentProvider>
       );
 
-      const initialData = store.getState();
+      // This makes sure we "bootstrap" resolve any async components prior to rendering
+      asyncBootstrapper(app).then(() => {
+        const markup = renderToString(app);
 
-      let head = reactHelmet.rewind();
+        // Get the async component state.
+        const asyncState = asyncContext.getState();
 
-      res.send(`
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <meta charset="utf-8" />
-            ${head.title}
-            ${head.meta}
-            ${head.link}
-            <link rel="stylesheet" href="/css/main.css">
-            <script src="/bundle.js" defer></script>
-          </head>
-          <body>
-            <div id="root">${markup}</div>
-            <script>window.__initialData__ = ${serialize(initialData)}</script>
-          </body>
-        </html>
-      `);
+        const initialData = store.getState();
+
+        let head = reactHelmet.rewind();
+
+        res.send(`<!DOCTYPE html>
+          <html>
+            <head>
+              <meta charset="utf-8" />
+              ${head.title}
+              ${head.meta}
+              ${head.link}
+              <link rel="stylesheet" href="/css/main.css">
+              <script src="/bundle.js" defer></script>
+            </head>
+            <body>
+              <div id="root">${markup}</div>
+              <script>window.__initialData__ = ${serialize(initialData)}</script>
+              <script type="text/javascript">
+                // Serialise the state into the HTML response
+                window.ASYNC_COMPONENTS_STATE = ${serialize(asyncState)}
+              </script>
+            </body>
+          </html>
+        `);
+      });
     })
     .catch(next);
 });
