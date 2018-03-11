@@ -7,7 +7,7 @@ const browserConfig = {
   entry: "./src/browser/index.js",
   output: {
     path: __dirname,
-    filename: "./public/bundle-[chunkhash].js"
+    filename: "./public/bundle.js"
   },
   devtool: "cheap-module-source-map",
   module: {
