@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchNews, fetchRepos } from "./../../../redux/repos";
-import RepoList from "./RepoList";
+import RepoList from "./../../component/RepoList/RepoList";
 
 class Repos extends Component {
   static initialAction() {
