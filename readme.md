@@ -30,6 +30,7 @@ it should be run on localhost:3000
 Feature
 ------
 - [x] ExpressJs :+1: [Express.js](https://expressjs.com/)
+- [x] Webpack [Webpack](https://webpack.js.org/)
 - [x] React Helmet :+1: [react-helmet](https://github.com/nfl/react-helmet)
 - [ ] React Loadable :+1: [react-loadable](https://github.com/jamiebuilds/react-loadable)
 ## Contributors
