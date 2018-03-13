@@ -22,8 +22,8 @@ class Repos extends Component {
 }
 
 Repos.propTypes = {
-  repos: PropTypes.obj,
-  dispatch: PropTypes.func
+  repos: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
