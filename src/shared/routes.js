@@ -1,20 +1,20 @@
-import Home from "./home";
-import Repo from "./repo";
-import NotFound from "./404/NotFound";
+import Home from './home';
+import Repo from './repo';
+import NotFound from './404/NotFound';
 
 const routes = [
   {
-    path: "/",
+    path: '/',
     exact: true,
-    component: Home
+    component: Home,
   },
   {
-    path: "/repo",
-    component: Repo
+    path: '/repo',
+    component: Repo,
   },
   {
-    component: NotFound
-  }
+    component: NotFound,
+  },
 ];
 
 export default routes;
