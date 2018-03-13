@@ -29,6 +29,7 @@
     "no-underscore-dangle": "off",
     "func-names": "off",
     "jsx-a11y/no-static-element-interactions": "off",
-    "import/first": "off"
+    "import/first": "off",
+    "import/extensions": "off"
   }
 }
