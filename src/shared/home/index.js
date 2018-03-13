@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import pure from 'recompose/pure';
 import Helmet from 'react-helmet';
-import "./index.css";
+import './index.css';
 
 class Home extends Component {
   render() {
@@ -19,7 +19,7 @@ class Home extends Component {
         </div>
         <div className="column">
           <blockquote>
-            <p><em>Sometimes when I close my eyes, I can't see :/</em></p>
+            <p><em>Sometimes when I close my eyes, I cant see :</em></p>
           </blockquote>
           <p>
             Twice a year we invest a small amount of mana in a large number of wizards (recently
