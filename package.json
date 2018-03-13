@@ -14,7 +14,7 @@
     "start": "node server.js",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
-    "lint": "eslint client server shared config internal"
+    "lint": "eslint src"
   },
   "keywords": [],
   "author": "Tirta Nugraha <dev.nugrata@gmail.com>",
