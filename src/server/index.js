@@ -87,5 +87,5 @@ app.get("*", (req, res, next) => {
 });
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log("Server is listening");
+  console.log("Server is listening"); // eslint-disable-line no-console
 });
