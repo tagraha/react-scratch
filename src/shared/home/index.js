@@ -8,9 +8,10 @@ class Home extends Component {
   render() {
     return (
       <div className="row">
-        <Helmet
-          title="Welcome to our Homepage"
-        />
+        <Helmet>
+          <title>Welcome to our Homepage</title>
+          <meta name="description" content="react-scratch" />
+        </Helmet>
         <div className="column">
           <p className="selected">About</p>
           <p>
