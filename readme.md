@@ -27,8 +27,8 @@ npm run start-dev
 
 it should be run on localhost:3000
 
-Feature
-------
+Technology
+----------
 - [x] Redux [https://redux.js.org/](https://redux.js.org/)
 - [x] ExpressJs :+1: [Express.js](https://expressjs.com/)
 - [x] Webpack 4 [https://webpack.js.org/](https://webpack.js.org/)
