@@ -10,7 +10,7 @@
     "start-dev": "cross-env NODE_ENV=development webpack -w & cross-env NODE_ENV=development nodemon ./server.js",
     "build": "webpack",
     "build:production": "cross-env NODE_ENV=production webpack -p",
-    "clean": "rm -rf public && rm -rf server.js",
+    "clean": "rm -rf build && rm -rf server.js",
     "prestart": "npm run clean && npm run build:production",
     "start": "node server.js",
     "contributors:add": "all-contributors add",

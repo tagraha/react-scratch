@@ -20,7 +20,7 @@ if(process.env.NODE_ENV === 'development') {
 const app = express();
 
 app.use(cors());
-app.use(express.static("public"));
+app.use(express.static("build"));
 
 app.get("*", (req, res, next) => {
   const store = configureStore();

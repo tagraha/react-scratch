@@ -59,6 +59,6 @@ typings/
 
 # build folder
 dist
-public/
+build/
 server.js
 server.js.map

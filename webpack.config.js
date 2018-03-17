@@ -7,7 +7,7 @@ const browserConfig = {
   entry: "./src/browser/index.js",
   output: {
     path: __dirname,
-    filename: "./public/bundle.js"
+    filename: "./build/bundle.js"
   },
   devtool: "cheap-module-source-map",
   module: {
@@ -16,8 +16,8 @@ const browserConfig = {
         test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         loader: "file-loader",
         options: {
-          name: "public/media/[name].[ext]",
-          publicPath: url => url.replace(/public/, "")
+          name: "build/media/[name].[ext]",
+          publicPath: url => url.replace(/build/, "")
         }
       },
       {
@@ -45,7 +45,7 @@ const browserConfig = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: "public/css/[name].css"
+      filename: "build/css/[name].css"
     })
   ]
 };
@@ -65,8 +65,8 @@ const serverConfig = {
         test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         loader: "file-loader",
         options: {
-          name: "public/media/[name].[ext]",
-          publicPath: url => url.replace(/public/, ""),
+          name: "build/media/[name].[ext]",
+          publicPath: url => url.replace(/build/, ""),
           emit: false
         }
       },
