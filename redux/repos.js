@@ -5,15 +5,22 @@ const FETCH_REPOS_REQUEST = "FETCH_REPOS_REQUEST";
 const FETCH_REPOS_SUCCESS = "FETCH_REPOS_SUCCESS";
 const FETCH_REPOS_FAILURE = "FETCH_REPOS_FAILURE";
 
-// Reducer
-export default function reducer(state = {}, action) {
-  switch (action.type) {
-    case FETCH_REPOS_SUCCESS:
-      console.log('FETCH_REPOS_SUCCESS');
-      return { ...state, repos: action.payload };
+// initial store
+const initial = {
+  list: [],
+  fetched: false
+}
 
-    default:
+// Reducer
+export default function reducer(state = initial, action) {
+  switch (action.type) {
+    case FETCH_REPOS_SUCCESS: {
+      console.log('FETCH_REPOS_SUCCESS');
+      return { ...state, list: action.payload, fetched: true };
+    }
+    default: {
       return state;
+    }
   }
 }
 

@@ -10,14 +10,14 @@ class Repos extends Component {
   }
 
   componentDidMount() {
-    if (!this.props.repos) {
+    if (!this.props.repos.fetched) {
       this.props.dispatch(Repos.initialAction());
     }
   }
 
   render() {
     const { repos } = this.props;
-    return <RepoList repos={repos} />;
+    return <RepoList repos={repos.list} />;
   }
 }
 
