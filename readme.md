@@ -40,6 +40,7 @@ Technology
 
 Todos
 -----
+- [ ] Code Splitting
 - [ ] improve Lighthouse score for PWA
 ## Contributors
 
