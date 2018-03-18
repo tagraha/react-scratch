@@ -11,6 +11,7 @@
   href="https://david-dm.org/tagraha/react-scratch">
     <img src="https://david-dm.org/tagraha/react-scratch.svg" alt="Dependency Status" />
   </a>
+  <br/>
 </div>
 
 
