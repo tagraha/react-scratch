@@ -29,6 +29,7 @@ it should be run on localhost:3000
 
 Technology
 ----------
+- [x] React 16.2.0 [https://reactjs.org/](https://reactjs.org/)
 - [x] Redux [https://redux.js.org/](https://redux.js.org/)
 - [x] ExpressJs :+1: [Express.js](https://expressjs.com/)
 - [x] Webpack 4 [https://webpack.js.org/](https://webpack.js.org/)
