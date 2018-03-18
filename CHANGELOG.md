@@ -1,3 +1,9 @@
+#### 1.6.1 (2018-03-18)
+
+##### Build System / Dependencies
+
+* **css:**  minifying css output ([1baed3c3](https://github.com/tagraha/react-scratch/commit/1baed3c3c32e07e861804b48129818ff55d8aebf))
+
 ### 1.6.0 (2018-03-18)
 
 ##### Build System / Dependencies
