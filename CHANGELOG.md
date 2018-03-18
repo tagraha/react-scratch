@@ -1,3 +1,54 @@
+### 1.6.0 (2018-03-18)
+
+##### Build System / Dependencies
+
+* **sw:**  Lighthouse PWA score enhancement with service worker ([68037bfe](https://github.com/tagraha/react-scratch/commit/68037bfe161750c9d9bc14a5eec523b41f7a69a9))
+* **output:**  change output folder destination ([973c0e05](https://github.com/tagraha/react-scratch/commit/973c0e05dec8e3a067c1cf7dac39c963be56802c))
+* **lighthouse:**  improving lighthouse score for accessibility ([e016c752](https://github.com/tagraha/react-scratch/commit/e016c752ac65388407163ed1a99c71e464cfc108))
+* **css output:**  minimize css output ([0a538c5b](https://github.com/tagraha/react-scratch/commit/0a538c5ba70493b6396701ccffb9c10f27df997b))
+* **component:**  separating container & component ([8e9f2ed3](https://github.com/tagraha/react-scratch/commit/8e9f2ed308bd6b2756559d7c8281918431d42295))
+* **chunkhash:**  remove chunkhash ([155b280c](https://github.com/tagraha/react-scratch/commit/155b280c390def1dec6f8e29b9bdded5649368c6))
+
+##### New Features
+
+* **sw:**  adding sw-precache ([5aa068ad](https://github.com/tagraha/react-scratch/commit/5aa068ad3162c5e39a82f24da5c2186431960f94))
+
+##### Bug Fixes
+
+* **reducer:**  fix rendered object map ([516e8170](https://github.com/tagraha/react-scratch/commit/516e8170b5787540bcd342580f6fb5990d1168d7))
+* **lint:**
+  *  fix lint warning no-console ([b73e69f4](https://github.com/tagraha/react-scratch/commit/b73e69f4480ef78b61ed3141ccb279f948e5581a))
+  *  fix lint warning on configureStore ([c02790c9](https://github.com/tagraha/react-scratch/commit/c02790c9061b8831a5e88981c10574a320daabf8))
+  *  fix lint warning ([2ee4b648](https://github.com/tagraha/react-scratch/commit/2ee4b648d66de082f0450f4b6e03c027e0cb3e5a))
+  *  fix lint warning ([878a07c0](https://github.com/tagraha/react-scratch/commit/878a07c0b14f3e84d9035efc7312925ad97e8849))
+  *  fix eslint rules ([bc0a1f24](https://github.com/tagraha/react-scratch/commit/bc0a1f24df7384ee196f368050305d39344d4818))
+  *  fix eslint warning on routes ([4043525b](https://github.com/tagraha/react-scratch/commit/4043525bcc2fc77034ddfcd459c60efaaae152a6))
+  *  change lint target ([2a89c3e8](https://github.com/tagraha/react-scratch/commit/2a89c3e83fe7cd64996f8f25c1732c1e54ecd1f9))
+
+##### Other Changes
+
+* **package:**
+  *  adding webpack precache ([6625eada](https://github.com/tagraha/react-scratch/commit/6625eada2a3ac9f212d6092ed099fedc4ec5b64a))
+  *  adding package for eslint ([497620c9](https://github.com/tagraha/react-scratch/commit/497620c9e9980160ce292d6e5ab9d02e1d085824))
+  *  add react-async-component ([46e673c9](https://github.com/tagraha/react-scratch/commit/46e673c98fcd30b0667b406033698d3cdcdc30bf))
+* **readme:**
+  *  add todos ([a8fb0f6d](https://github.com/tagraha/react-scratch/commit/a8fb0f6d1238bb96984680b27773d21be118ab72))
+  *  change caption. feature to technology ([20d9834a](https://github.com/tagraha/react-scratch/commit/20d9834a057cd5bf4f0a7bb1ef83991d5b6949e8))
+  *  add eslint to features ([44de6a6e](https://github.com/tagraha/react-scratch/commit/44de6a6eb759b5b7f3a7b41e985bd21d4e498491))
+* **scripts:**  better build script ([1cbcdbf3](https://github.com/tagraha/react-scratch/commit/1cbcdbf3196cadf26059bb2acfd38485db80fb66))
+* **redux:**  adding combine reducer ([462aff81](https://github.com/tagraha/react-scratch/commit/462aff81ae81f630bae051c61e878201bf784f89))
+* **rules:**  update eslint rules ([bff9b805](https://github.com/tagraha/react-scratch/commit/bff9b8054e32272bb3532b5e4c1ceb7ee42f1776))
+* **lint:**  update eslint rules ([cd21d1fa](https://github.com/tagraha/react-scratch/commit/cd21d1fa0cacac7e150ef86d2a6db7833ca29455))
+* **eslint:**  add eslint config file ([4d085d7d](https://github.com/tagraha/react-scratch/commit/4d085d7d0552d02eb2ae84a85a6e72c4f875714a))
+
+##### Performance Improvements
+
+* **async-component:**  apply async-component bootstraper on server & client side ([f553568a](https://github.com/tagraha/react-scratch/commit/f553568aa5d96bda43f516a277174c4a297acfcd))
+
+##### Refactors
+
+* **file:**  remove unused file ([bccaef53](https://github.com/tagraha/react-scratch/commit/bccaef5306bd9d21d363fb640944f2fff51a7dd4))
+
 ### 1.5.0 (2018-03-10)
 
 ##### Build System / Dependencies
