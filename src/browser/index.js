@@ -36,3 +36,9 @@ asyncBootstrapper(app).then(() => {
     document.getElementById("root")
   );
 });
+
+(function() {
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/scratch-worker.js');
+  }
+})();

@@ -1,6 +1,7 @@
 require('dotenv').config();
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const autoprefixer = require("autoprefixer");
 
 const browserConfig = {
@@ -46,7 +47,17 @@ const browserConfig = {
   plugins: [
     new ExtractTextPlugin({
       filename: "build/css/[name].css"
-    })
+    }),
+    new SWPrecacheWebpackPlugin(
+      {
+        minify: true,
+        cacheId: 'react-scratch',
+        dontCacheBustUrlsMatching: /\.\w{8}\./,
+        filename: 'build/scratch-worker.js',
+        maximumFileSizeToCacheInBytes: 4194304,
+        staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+      }
+    ),
   ]
 };
 
