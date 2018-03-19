@@ -4,6 +4,9 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const autoprefixer = require("autoprefixer");
 
+const nodeEnv = process.env.NODE_ENV || 'development';
+const isDev = nodeEnv === 'development';
+
 const browserConfig = {
   entry: "./src/browser/index.js",
   output: {
