@@ -26,6 +26,11 @@ npm install
 npm run start-dev
 ```
 
+```bash
+/* production, you just need npm start */
+npm start
+```
+
 it should be run on localhost:3000
 
 Technology
