@@ -35,4 +35,4 @@ const mapActionsToProps = {
   repoFetchAction: fetchRepos
 }
 
-export default connect(mapStateToProps, mapActionsToProps)(pure(Repos));
+export default connect(mapStateToProps, mapActionsToProps)(Repos);
