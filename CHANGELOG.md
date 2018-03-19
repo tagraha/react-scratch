@@ -1,3 +1,16 @@
+#### 1.6.3 (2018-03-19)
+
+##### Build System / Dependencies
+
+* **sourcemap:**  conditional sourcemap ([e9cc5a96](https://github.com/tagraha/react-scratch/commit/e9cc5a968621c115e0cbd136afa6925a6e23f6da))
+* **dev:**  adding flexible bundler for dev environtment & global variable for clientside ([8221d591](https://github.com/tagraha/react-scratch/commit/8221d591e4951879bac797bcf2a633f84a546aea))
+* **metatag:**  adding IE support metatag ([0530d426](https://github.com/tagraha/react-scratch/commit/0530d4260f1afdb126cc1bff89d202c81f9a8f09))
+* **HTML:**  rendered string html separation ([3c837f3a](https://github.com/tagraha/react-scratch/commit/3c837f3aab9c1f96abefd8a1017c25f882f1f704))
+
+##### Other Changes
+
+* **envar:**  adding environment variable ([a5428788](https://github.com/tagraha/react-scratch/commit/a5428788d300b1bbf23a3c9578ee4cffd3fcc641))
+
 #### 1.6.2 (2018-03-19)
 
 ##### Build System / Dependencies
