@@ -1,4 +1,4 @@
-require('dotenv').config();
+const path = require('path');
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
@@ -7,8 +7,8 @@ const autoprefixer = require("autoprefixer");
 const browserConfig = {
   entry: "./src/browser/index.js",
   output: {
-    path: __dirname,
-    filename: "./build/bundle.js"
+    path: path.resolve("./build"),
+    filename: "bundle.js"
   },
   devtool: "cheap-module-source-map",
   module: {
@@ -17,7 +17,7 @@ const browserConfig = {
         test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         loader: "file-loader",
         options: {
-          name: "build/media/[name].[ext]",
+          name: "media/[name].[ext]",
           publicPath: url => url.replace(/build/, "")
         }
       },
@@ -46,14 +46,14 @@ const browserConfig = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: "build/css/[name].css"
+      filename: "css/[name].css"
     }),
     new SWPrecacheWebpackPlugin(
       {
         minify: true,
         cacheId: 'react-scratch',
         dontCacheBustUrlsMatching: /\.\w{8}\./,
-        filename: 'build/scratch-worker.js',
+        filename: 'scratch-worker.js',
         maximumFileSizeToCacheInBytes: 4194304,
         staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
       }
@@ -65,7 +65,7 @@ const serverConfig = {
   entry: "./src/server/index.js",
   target: "node",
   output: {
-    path: __dirname,
+    path: path.resolve("./build"),
     filename: "server.js",
     libraryTarget: "commonjs2"
   },
@@ -76,7 +76,7 @@ const serverConfig = {
         test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         loader: "file-loader",
         options: {
-          name: "build/media/[name].[ext]",
+          name: "media/[name].[ext]",
           publicPath: url => url.replace(/build/, ""),
           emit: false
         }
