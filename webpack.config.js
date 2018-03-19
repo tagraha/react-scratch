@@ -31,7 +31,7 @@ const browserConfig = {
             },
             {
               loader: "postcss-loader",
-              options: { plugins: [autoprefixer()], minimize: true }
+              options: { plugins: [autoprefixer()]}
             }
           ]
         })
@@ -85,10 +85,7 @@ const serverConfig = {
         test: /\.css$/,
         use: [
           {
-            loader: "css-loader/locals",
-            options: {
-              minimize: true
-            }
+            loader: "css-loader/locals"
           }
         ]
       },
