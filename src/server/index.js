@@ -85,7 +85,8 @@ app.get("*", (req, res, next) => {
             </head>
             <body>
               <div id="root">${markup}</div>
-              <script src="/bundle.js" defer></script>
+              <script src="/vendor.min.js" defer></script>
+              <script src="/main.min.js" defer></script>
               <script>window.__initialData__ = ${serialize(initialData)}</script>
               <script type="text/javascript">
                 // Serialise the state into the HTML response

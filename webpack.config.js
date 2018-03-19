@@ -8,7 +8,7 @@ const browserConfig = {
   entry: "./src/browser/index.js",
   output: {
     path: path.resolve("./build"),
-    filename: "bundle.js"
+    filename: "[name].min.js"
   },
   devtool: "cheap-module-source-map",
   module: {
@@ -58,7 +58,21 @@ const browserConfig = {
         staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
       }
     ),
-  ]
+  ],
+  optimization: {
+    minimize: true,
+    
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all'
+        }
+      }
+    }
+    
+  }
 };
 
 const serverConfig = {
