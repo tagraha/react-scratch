@@ -13,7 +13,7 @@ const browserConfig = {
     path: path.resolve("./build"),
     filename: "[name].min.js"
   },
-  devtool: "cheap-module-source-map",
+  devtool: isDev ? "cheap-module-source-map" : "hidden-source-map",
   module: {
     rules: [
       {
@@ -92,7 +92,7 @@ const serverConfig = {
     filename: "server.js",
     libraryTarget: "commonjs2"
   },
-  devtool: "cheap-module-source-map",
+  devtool: isDev ? "cheap-module-source-map" : "hidden-source-map",
   module: {
     rules: [
       {
