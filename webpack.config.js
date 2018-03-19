@@ -30,7 +30,7 @@ const browserConfig = {
           use: [
             {
               loader: "css-loader",
-              options: { importLoaders: 1, minimize: true }
+              options: { importLoaders: 1, minimize: !isDev }
             },
             {
               loader: "postcss-loader",
@@ -51,6 +51,12 @@ const browserConfig = {
     new ExtractTextPlugin({
       filename: "css/[name].css"
     }),
+    // Setup global variables for client
+    new webpack.DefinePlugin({
+      __CLIENT__: true,
+      __SERVER__: false,
+      __DEV__: isDev
+    }),
     new SWPrecacheWebpackPlugin(
       {
         minify: true,
@@ -63,7 +69,7 @@ const browserConfig = {
     ),
   ],
   optimization: {
-    minimize: true,
+    minimize: !isDev,
     
     splitChunks: {
       cacheGroups: {
@@ -115,7 +121,7 @@ const serverConfig = {
     ]
   },
   optimization: {
-    minimize: true
+    minimize: !isDev
   }
 };
 
