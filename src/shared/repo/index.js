@@ -11,7 +11,7 @@ class Repos extends Component {
 
   componentDidMount() {
     if (!this.props.repos.fetched) {
-      this.props.dispatch(Repos.initialAction());
+      this.props.repoFetchAction();
     }
   }
 
@@ -30,4 +30,8 @@ const mapStateToProps = state => ({
   repos: state.repos,
 });
 
-export default connect(mapStateToProps)(Repos);
+const mapActionsToProps = {
+  repoFetchAction: fetchRepos
+}
+
+export default connect(mapStateToProps, mapActionsToProps)(Repos);
