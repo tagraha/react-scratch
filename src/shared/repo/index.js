@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import pure from 'recompose/pure';
 import { fetchRepos } from './../../../redux/repos';
 import RepoList from './../../component/RepoList/RepoList';
 
@@ -34,4 +35,4 @@ const mapActionsToProps = {
   repoFetchAction: fetchRepos
 }
 
-export default connect(mapStateToProps, mapActionsToProps)(Repos);
+export default connect(mapStateToProps, mapActionsToProps)(pure(Repos));
