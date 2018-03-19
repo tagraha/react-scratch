@@ -1,3 +1,24 @@
+#### 1.6.2 (2018-03-19)
+
+##### Build System / Dependencies
+
+* **minimize:**  minimizing server file output ([456f0a6b](https://github.com/tagraha/react-scratch/commit/456f0a6b74d76d19657b827b679167cf9037a189))
+* **split:**  separating vendor & application output file ([c482ac2b](https://github.com/tagraha/react-scratch/commit/c482ac2b6965ca1dd3e9977135c6920d6a363cae))
+* **clean:**  update clean scripts ([91cf4435](https://github.com/tagraha/react-scratch/commit/91cf44357e5ed14209d259646c0594d4c4b476bc))
+* **output:**  move build output to build folder. including server file output ([7642b1d8](https://github.com/tagraha/react-scratch/commit/7642b1d8ce4cc589fec24e11c79d732db7d3814c))
+
+##### Bug Fixes
+
+* **async:**  fix async data fetching ([30c1610f](https://github.com/tagraha/react-scratch/commit/30c1610f0417f18a9b03183ef83f103d82fc5379))
+* **build:**  fix broken build ([2d290c26](https://github.com/tagraha/react-scratch/commit/2d290c268cd8b45c359590d8161ded0727fccc4a))
+
+##### Other Changes
+
+* **package:**  update yarn.lock ([2e526abc](https://github.com/tagraha/react-scratch/commit/2e526abc208b77cb62cfa3f208ca6496b6ff05bf))
+* **recompose:**  using pure component ([0b4a73da](https://github.com/tagraha/react-scratch/commit/0b4a73da3d05742216be4ff6b159c82adb1dbd35))
+* **redux:**  map actions to props ([b50e7dd4](https://github.com/tagraha/react-scratch/commit/b50e7dd4497d8ccf40889c71c24d933f42ea2e00))
+* **view:**  change the home page intro ([1077a605](https://github.com/tagraha/react-scratch/commit/1077a605b7417db0b4643f343b5d6152d4cab2b3))
+
 #### 1.6.1 (2018-03-18)
 
 ##### Build System / Dependencies
