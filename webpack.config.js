@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const { ReactLoadablePlugin } = require('react-loadable/webpack');
 const autoprefixer = require("autoprefixer");
 
 const browserConfig = {
@@ -48,6 +49,9 @@ const browserConfig = {
     new ExtractTextPlugin({
       filename: "css/[name].css"
     }),
+    new ReactLoadablePlugin({
+      filename: 'react-loadable.json',
+    }),
     new SWPrecacheWebpackPlugin(
       {
         minify: true,
@@ -58,7 +62,15 @@ const browserConfig = {
         staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
       }
     ),
-  ]
+  ],
+  optimization: {
+    minimize: true,
+    splitChunks: {
+      name: 'chunk-manifest',
+      filename: "chunk-manifest.js",
+      chunks: "all"
+    }
+  }
 };
 
 const serverConfig = {

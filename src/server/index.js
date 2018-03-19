@@ -4,6 +4,8 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import { Provider } from "react-redux";
 import { AsyncComponentProvider, createAsyncContext } from 'react-async-component';
+import Loadable from 'react-loadable';
+import { getBundles } from 'react-loadable/webpack';
 import asyncBootstrapper from 'react-async-bootstrapper';
 import { StaticRouter, matchPath } from "react-router-dom";
 import serialize from "serialize-javascript";
@@ -13,6 +15,8 @@ import App from "../shared/App";
 import sourceMapSupport from "source-map-support";
 import offline from './offline';
 import reactHelmet from 'react-helmet';
+
+import stats from './../../react-loadable.json';
 
 if(process.env.NODE_ENV === 'development') {
   sourceMapSupport.install();
@@ -41,20 +45,26 @@ app.get("*", (req, res, next) => {
       // Create the async context for our provider, this grants
       // us the ability to tap into the state to send back to the client.
       const asyncContext = createAsyncContext();
+      let modules = [];
 
       const app = (
+        <Loadable.Capture report={moduleName => modules.push(moduleName)}>
         <AsyncComponentProvider asyncContext={asyncContext}>
           <Provider store={store}>
             <StaticRouter location={req.url} context={context}>
-              <App />
+              
+                <App />
+              
             </StaticRouter>
           </Provider>
         </AsyncComponentProvider>
+        </Loadable.Capture>
       );
 
       // This makes sure we "bootstrap" resolve any async components prior to rendering
       asyncBootstrapper(app).then(() => {
         const markup = renderToString(app);
+        let bundles = getBundles(stats, modules);
 
         // Get the async component state.
         const asyncState = asyncContext.getState();
@@ -85,6 +95,10 @@ app.get("*", (req, res, next) => {
             </head>
             <body>
               <div id="root">${markup}</div>
+              <script src="/chunk-manifest.js"></script>
+              ${bundles.map(bundle => {
+                return `<script src="${bundle.file}"></script>`
+              }).join('\n')}
               <script src="/bundle.js" defer></script>
               <script>window.__initialData__ = ${serialize(initialData)}</script>
               <script type="text/javascript">
@@ -100,6 +114,8 @@ app.get("*", (req, res, next) => {
     .catch(next);
 });
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log("Server is listening"); // eslint-disable-line no-console
+Loadable.preloadAll().then(() => {
+  app.listen(process.env.PORT || 3000, () => {
+    console.log("Server is listening"); // eslint-disable-line no-console
+  });
 });

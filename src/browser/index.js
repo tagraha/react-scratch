@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import configureStore from "../shared/configureStore";
 import { AsyncComponentProvider, createAsyncContext } from 'react-async-component';
 import asyncBootstrapper from 'react-async-bootstrapper';
+import Loadable from 'react-loadable';
 import App from "../shared/App";
 
 // Grab the state from a global variable injected into the server-generated HTML
@@ -29,12 +30,14 @@ const app = (
   </AsyncComponentProvider>
 );
 
-asyncBootstrapper(app).then(() => {
-  // Render the app
-  hydrate(
-    app,
-    document.getElementById("root")
-  );
+Loadable.preloadReady().then(() => {
+  asyncBootstrapper(app).then(() => {
+    // Render the app
+    hydrate(
+      app,
+      document.getElementById("root")
+    );
+  });
 });
 
 (function() {
