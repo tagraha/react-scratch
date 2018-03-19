@@ -110,6 +110,9 @@ const serverConfig = {
         query: { presets: ["react"] }
       }
     ]
+  },
+  optimization: {
+    minimize: true
   }
 };
 
