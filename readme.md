@@ -26,8 +26,10 @@ npm install
 npm run start-dev
 ```
 
+Production scripts
+it will build & run in production mode 
+
 ```bash
-/* production, you just need npm start */
 npm start
 ```
 
