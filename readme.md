@@ -49,7 +49,7 @@ Technology
 
 Todos
 -----
-- [ ] Code Splitting
+- [x] Vendor Code Splitting
 - [ ] improve Lighthouse score for PWA
 ## Contributors
 
