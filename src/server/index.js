@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import React from "react";
 import { renderToString } from "react-dom/server";
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 import { Provider } from "react-redux";
 import { AsyncComponentProvider, createAsyncContext } from 'react-async-component';
 import asyncBootstrapper from 'react-async-bootstrapper';
@@ -13,6 +14,8 @@ import sourceMapSupport from "source-map-support";
 import offline from './offline';
 import reactHelmet from 'react-helmet';
 import HTML from './html';
+
+const sheet = new ServerStyleSheet();
 
 if(process.env.NODE_ENV === 'development') {
   sourceMapSupport.install();
@@ -46,7 +49,11 @@ app.get("*", (req, res, next) => {
         <AsyncComponentProvider asyncContext={asyncContext}>
           <Provider store={store}>
             <StaticRouter location={req.url} context={context}>
-              <App />
+
+              <StyleSheetManager sheet={sheet.instance}>
+                <App />
+              </StyleSheetManager>
+              
             </StaticRouter>
           </Provider>
         </AsyncComponentProvider>

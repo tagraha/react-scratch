@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import pure from 'recompose/pure';
 import Helmet from 'react-helmet';
+import styled from 'styled-components';
 import './index.css';
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: left;
+  color: palevioletred;
+`;
 
 class Home extends Component {
   render() {
@@ -26,7 +33,7 @@ class Home extends Component {
         <div className="row">
           <div className="column">
             <blockquote>
-              <p><em>Motivation</em></p>
+              <p><Title>Motivation</Title></p>
             </blockquote>
             <p>
               There is a lot react universal boilerplate out there. I just want to make it as simple as possible with minimal setup

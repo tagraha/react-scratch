@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import configureStore from "../shared/configureStore";
 import { AsyncComponentProvider, createAsyncContext } from 'react-async-component';
 import asyncBootstrapper from 'react-async-bootstrapper';
+import { consolidateStreamedStyles } from 'styled-components';
 import App from "../shared/App";
 
 // Grab the state from a global variable injected into the server-generated HTML
@@ -18,6 +19,9 @@ delete window.__initialData__;
 delete window.ASYNC_COMPONENTS_STATE;
 
 const store = configureStore(preloadedState);
+
+// https://www.styled-components.com/docs/advanced#server-side-rendering
+consolidateStreamedStyles();
 
 const app = (
   <AsyncComponentProvider  rehydrateState={rehydrateState}>
