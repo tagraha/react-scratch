@@ -45,6 +45,7 @@ Technology
 - [x] React-Router 4 [https://reacttraining.com/react-router/web/guides/philosophy](https://reacttraining.com/react-router/web/guides/philosophy)
 - [x] React Helmet :+1: [react-helmet](https://github.com/nfl/react-helmet)
 - [x] Eslint: [https://eslint.org/](https://eslint.org/)
+- [x] styled-components: [http://styled-components.com](http://styled-components.com)
 - [ ] React Loadable :+1: [react-loadable](https://github.com/jamiebuilds/react-loadable)
 
 Todos
