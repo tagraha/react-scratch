@@ -23,6 +23,7 @@ git clone git@github.com:tagraha/react-scratch.git
 ```bash
 cd react-scratch
 npm install
+npm run build
 npm run start-dev
 ```
 
