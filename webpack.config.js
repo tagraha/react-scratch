@@ -1,8 +1,11 @@
 const path = require('path');
 const webpack = require("webpack");
+const AssetsPlugin = require('assets-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const autoprefixer = require("autoprefixer");
+
+var assetsPluginInstance = new AssetsPlugin();
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv === 'development';
@@ -11,7 +14,7 @@ const browserConfig = {
   entry: "./src/browser/index.js",
   output: {
     path: path.resolve("./build"),
-    filename: "[name].min.js"
+    filename: isDev ? "[name].js" : "[name]-[chunkhash].min.js"
   },
   devtool: isDev ? "cheap-module-source-map" : "hidden-source-map",
   module: {
@@ -48,6 +51,7 @@ const browserConfig = {
     ]
   },
   plugins: [
+    assetsPluginInstance,
     new ExtractTextPlugin({
       filename: "css/[name].css"
     }),

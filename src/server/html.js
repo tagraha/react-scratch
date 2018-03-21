@@ -1,4 +1,5 @@
 import serialize from "serialize-javascript";
+import bundleManifest from './../../webpack-assets.json';
 
 export default (
   head,
@@ -27,13 +28,13 @@ export default (
       <meta name="msapplication-TileColor" content="#2d89ef">
       <meta name="theme-color" content="#ffffff">
       
-      <link rel="stylesheet" href="/css/main.css">
+      <link rel="stylesheet" href="/${bundleManifest.main.css}">
       <link rel="manifest" href="/manifest.json">
     </head>
     <body>
       <div id="root">${markup}</div>
-      <script src="/vendor.min.js" defer></script>
-      <script src="/main.min.js" defer></script>
+      <script src="/${bundleManifest.vendor.js}"></script>
+      <script src="/${bundleManifest.main.js}" defer></script>
       <script>window.__initialData__ = ${serialize(initialData)}</script>
       <script type="text/javascript">
         // Serialise the state into the HTML response
