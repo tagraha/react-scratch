@@ -30,6 +30,7 @@ Production scripts
 it will build & run in production mode 
 
 ```bash
+npm run build:production
 npm start
 ```
 
