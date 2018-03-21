@@ -11,7 +11,6 @@
     "build": "webpack",
     "build:production": "cross-env NODE_ENV=production webpack -p",
     "clean": "rm -rf build",
-    "prestart": "npm run build:production",
     "start": "node ./build/server.js",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
