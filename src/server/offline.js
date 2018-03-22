@@ -7,7 +7,7 @@ const offline = {
         }).catch(function(e) {
           console.error("ServiceWorker registration failed: ", e)
         })
-    });`
+    });`,
 };
 
 export default offline;
