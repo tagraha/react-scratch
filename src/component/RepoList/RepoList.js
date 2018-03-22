@@ -20,7 +20,7 @@ class RepoList extends Component {
         <div className="header">
           <strong>tagraha repository - data fetched from https://api.github.com/users/tagraha/repos</strong>
         </div>
-        {repos && repos.map((repository) => 
+        {repos && repos.map((repository) =>
           <div key={repository.id} className="repo-item">
             <a href={`${repository.html_url}`} target="_blank">{repository.name}</a>
             <br />
