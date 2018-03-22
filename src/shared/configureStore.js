@@ -7,7 +7,7 @@ import logger from 'redux-logger';
 import repos from './../../redux/repos';
 
 const reducer = combineReducers({
-  repos
+  repos,
 });
 
 const configureStore = preloadedState =>

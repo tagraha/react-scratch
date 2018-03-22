@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import pure from 'recompose/pure';
 import { fetchRepos } from './../../../redux/repos';
 import RepoList from './../../component/RepoList/RepoList';
 
@@ -24,7 +23,7 @@ class Repos extends Component {
 
 Repos.propTypes = {
   repos: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-  dispatch: PropTypes.func.isRequired,
+  repoFetchAction: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -32,7 +31,7 @@ const mapStateToProps = state => ({
 });
 
 const mapActionsToProps = {
-  repoFetchAction: fetchRepos
-}
+  repoFetchAction: fetchRepos,
+};
 
 export default connect(mapStateToProps, mapActionsToProps)(Repos);
