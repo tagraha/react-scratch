@@ -71,7 +71,6 @@ app.get('*', (req, res, next) => {
         const head = reactHelmet.rewind();
 
         res.send(HTML(head, markup, initialData, asyncState, offline));
-
       });
     })
     .catch(next);

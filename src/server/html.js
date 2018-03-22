@@ -1,4 +1,4 @@
-import serialize from "serialize-javascript";
+import serialize from 'serialize-javascript';
 import bundleManifest from './../../webpack-assets.json';
 
 export default (
@@ -6,7 +6,7 @@ export default (
   markup,
   initialData,
   asyncState,
-  offline
+  offline,
 ) => {
   const html = `<!DOCTYPE html>
   <html lang="en">
@@ -43,7 +43,7 @@ export default (
       <script type="text/javascript">${offline.serviceWorker}</script>
     </body>
   </html>
-  `
+  `;
 
   return html;
-}
+};

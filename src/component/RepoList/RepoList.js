@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Helmet from 'react-helmet';
-import "./RepoList.css";
+import './RepoList.css';
 
 class RepoList extends Component {
   render() {
@@ -19,20 +20,23 @@ class RepoList extends Component {
         <div className="header">
           <strong>tagraha repository - data fetched from https://api.github.com/users/tagraha/repos</strong>
         </div>
-        {repos &&
-          repos.map(repository =>
-            <div key={repository.id} className="repo-item">
-              <a href={`${repository.html_url}`} target="_blank">{repository.name}</a>
-              <br />
-              <span>created at {repository.created_at}</span>
-              <blockquote>
-                <p><em>{repository.description}</em></p>
-              </blockquote>
-            </div>
-          )}
+        {repos && repos.map((repository) => 
+          <div key={repository.id} className="repo-item">
+            <a href={`${repository.html_url}`} target="_blank">{repository.name}</a>
+            <br />
+            <span>created at {repository.created_at}</span>
+            <blockquote>
+              <p><em>{repository.description}</em></p>
+            </blockquote>
+          </div>
+        )}
       </div>
     );
   }
 }
+
+RepoList.propTypes = {
+  repos: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+};
 
 export default RepoList;

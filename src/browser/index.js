@@ -1,12 +1,12 @@
-import React from "react";
-import { hydrate } from "react-dom";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import configureStore from "../shared/configureStore";
-import { AsyncComponentProvider, createAsyncContext } from 'react-async-component';
+import React from 'react';
+import { hydrate } from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import configureStore from '../shared/configureStore';
+import { AsyncComponentProvider } from 'react-async-component';
 import asyncBootstrapper from 'react-async-bootstrapper';
 import { consolidateStreamedStyles } from 'styled-components';
-import App from "../shared/App";
+import App from '../shared/App';
 
 // Grab the state from a global variable injected into the server-generated HTML
 const preloadedState = window.__initialData__;
@@ -24,7 +24,7 @@ const store = configureStore(preloadedState);
 consolidateStreamedStyles();
 
 const app = (
-  <AsyncComponentProvider  rehydrateState={rehydrateState}>
+  <AsyncComponentProvider rehydrateState={rehydrateState}>
     <Provider store={store}>
       <BrowserRouter>
         <App />
@@ -37,12 +37,12 @@ asyncBootstrapper(app).then(() => {
   // Render the app
   hydrate(
     app,
-    document.getElementById("root")
+    document.getElementById('root'),
   );
 });
 
-(function() {
-  if('serviceWorker' in navigator) {
+(function () {
+  if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/scratch-worker.js');
   }
 })();
