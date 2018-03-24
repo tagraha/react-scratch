@@ -15,7 +15,6 @@ const initial = {
 export default function reducer(state = initial, action) {
   switch (action.type) {
     case FETCH_REPOS_SUCCESS: {
-      console.log('FETCH_REPOS_SUCCESS');
       return { ...state, list: action.payload, fetched: true };
     }
     default: {
